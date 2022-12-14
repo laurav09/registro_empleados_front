@@ -1,1 +1,29 @@
-
+<div class="container">
+  <div class="form" [formGroup]="form">
+    <h3>Registra un nuevo empleado</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Primer nombre</mat-label>
+      <input matInput formControlName="nombre" maxlength="20">
+      <!-- <mat-error *ngIf="nombre.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Segundo nombre</mat-label>
+      <input matInput formControlName="segundoNombre" maxlength="50">
+      <!-- <mat-error *ngIf="segundoNombre.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Primer apellido</mat-label>
+      <input matInput formControlName="apellido" maxlength="20">
+      <!-- <mat-error *ngIf="apellido.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>País</mat-label>
+      <mat-select formControlName="pais">
+        <ng-container *ngFor="let pais of paises">
+          <mat-option [value]="pais">{{pais.nombre}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+  </div>
+</div>

@@ -1,10 +1,12 @@
-export interface Empleado {
-  id: number;
-  primerNombre: string;
-  otrosNombres: string;
-  primerApellido: string;
-  pais: number;
-  email: string;
+import { Pais } from './pais';
+
+export class Empleado {
+  id!: number;
+  primerNombre!: string;
+  segundoNombre!: string;
+  primerApellido!: string;
+  pais!: Pais;
+  email!: string;
 }
 export interface PageEmpleado {
   content: Empleado[];

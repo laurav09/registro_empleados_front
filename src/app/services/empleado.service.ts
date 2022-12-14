@@ -14,6 +14,9 @@ export class EmpleadoService {
   getAll(page: number, size: number) {
     let params = new HttpParams().set('pageNo', page).set('pageSize', size);
     return this.http.get<PageEmpleado>(`${this.baseURL}/empleado`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       params: params,
     });
   }
